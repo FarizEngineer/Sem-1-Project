@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groca - Premium Grocery Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+        :root {
+            --primary: green; 
+            --accent: white;  
+            --light-green: darkgreen; /* rgb se hatakar name kar diya */
+            --dark: green;
+            --bg: MintCream; /* Light background name */
+            --white: white;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* --- Navbar --- */
+        .nav-link {
+            position: sticky !important;
+            color: chartreuse !important;
+            transition: transform 0.2s ease-in-out !important;
+        }
+
+        .nav-link:hover {
+            transform: translateY(5px);
+            box-shadow: 0px 0px 10px gold;
+            color: springgreen !important;
+        }
+
+        /* --- HEADER ANIMATIONS --- */
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        .store-header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            color: white;
+        }
+
+        .store-header h1 { font-size: 55px; font-weight: 800; animation: fadeInDown 0.8s ease-out; }
+        .store-header h1 span { color: Palegreen; } /* Name changed */
+        .store-header p { font-size: 18px; opacity: 0.9; animation: fadeInUp 1s ease-out 0.3s backwards; }
+
+        .gallery-title { text-align: center; margin-top: -35px; position: relative; z-index: 5; }
+        .gallery-title h2 { 
+            background: var(--white); 
+            display: inline-block; 
+            padding: 15px 50px; 
+            border-radius: 50px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+            color: var(--primary);
+            font-weight: 800;
+            border: 2px solid var(--light-green);
+        }
+
+        /* --- GRID & CARDS --- */
+        .container-main { max-width: 1300px; margin: 0 auto; padding: 0 20px; }
+        .cat-heading {
+            font-size: 24px; font-weight: 800; color: var(--primary);
+            margin: 60px 0 30px; display: flex; align-items: center;
+        }
+        .cat-heading::after { content: ""; flex: 1; height: 2px; background: silver; margin-left: 20px; }
+
+        .grocery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+            gap: 25px;
+        }
+
+        .card {
+            background: white; border-radius: 20px; padding: 15px; text-align: center;
+            border: 1px solid GhostWhite; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+        .card:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+        .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 15px; }
+        .price { font-weight: 800; color: green; font-size: 17px; }
+
+        /* --- MODAL --- */
+        .modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9); display: none;
+            justify-content: center; align-items: center; z-index: 9999;
+            backdrop-filter: blur(15px);
+        }
+        .modal-box {
+            background: white; width: 90%; max-width: 850px; border-radius: 30px;
+            display: flex; overflow: hidden; position: relative;
+        }
+        .close-modal {
+            position: absolute; top: 20px; right: 25px; font-size: 30px; cursor: pointer;
+            z-index: 10; background: white; width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center; border-radius: 50%;
+        }
+
+        /* --- Footer Style --- */
+        footer {
+            background-color: black !important;
+            color: white !important;
+        }
+        footer .text-muted { color: lightgray !important; }
+        footer a { color: chartreuse !important; text-decoration: none; }
+        .grocery-grid {
+            display: grid;
+            /* Isse desktop par 5 columns fix ho jayenge */
+            grid-template-columns: repeat(5, 1fr); 
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* Responsive: Tablet par 3 aur Mobile par 2 cards */
+        @media (max-width: 1100px) {
+            .grocery-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .grocery-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-light" style="position: sticky !important; top: 0; z-index: 1000;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="" style="height: 100px; width: 100px;"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#" style="color: chartreuse;"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="Fariz2.html" style="color: chartreuse;"><i class="fa-brands fa-product-hunt"></i> Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" style="color: chartreuse;"><i class="fa-regular fa-image"></i> Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" style="color: chartreuse;"><i class="fa-solid fa-circle-question"></i> Query</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" style="color: chartreuse;"><i class="fa-regular fa-circle-phone"></i> Contact us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" style="color: chartreuse;"><i class="fa-solid fa-circle-info"></i> About us</a></li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search">
+        <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+    <div class="store-header">
+        <h1>Grocery <span>Gallery</span></h1>
+        <p><i class="fas fa-leaf"></i> Premium Factory-to-Home Experience</p>
+    </div>
+
+    <div class="gallery-title">
+        <h2><i class="fas fa-store"></i> Explore Our Collection</h2>
+    </div>
+
+    <div class="container-main" id="gallery-container"></div>
+
+    <div class="modal" id="itemModal">
+        <div class="modal-box">
+            <div class="close-modal" onclick="closeModal()">&times;</div>
+            <div style="flex:1;"><img id="m-img" src="" style="width:100%; height:100%; object-fit:cover;"></div>
+            <div style="flex:1.2; padding:40px;">
+                <div class="factory-badge" style="color:green; font-weight:800; font-size:12px;">FACTORY CERTIFIED</div>
+                <h2 id="m-name"></h2>
+                <div id="m-price" class="price" style="font-size:24px;"></div>
+                <div style="background:honeydew; padding:20px; border-radius:15px; margin:20px 0;">
+                    <ul id="m-steps" style="list-style:none; padding:0; font-size:14px;"></ul>
+                </div>
+                <button class="btn btn-success w-100 p-3 fw-bold" style="border-radius:15px;">ADD TO CART</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // storeData logic remains the same
+const storeData = [
+        {
+            title: "Premium Grocery Collection (20 Items)",
+            items: [
+                { name: "Organic Potato", price: "80/-", img: "my image/egg.webp", steps: ["Grown in organic soil.", "Hand-picked."] },
+                { name: "Fresh Capsicum", price: "140/-", img: "https://images.pexels.com/photos/594590/pexels-photo-594590.jpeg?auto=compress&cs=tinysrgb&w=400", steps: ["Greenhouse fresh.", "Pesticide free."] },
+                { name: "Red Tomatoes", price: "120/-", img: "https://images.pexels.com/photos/1327838/pexels-photo-1327838.jpeg?auto=compress&cs=tinysrgb&w=400", steps: ["Sun ripened.", "Rich juice."] },
+                { name: "Cauliflower", price: "100/-", img: "https://images.pexels.com/photos/461245/pexels-photo-461245.jpeg?auto=compress&cs=tinysrgb&w=400", steps: ["Snow white.", "Freshly cut."] },
+                { name: "Fresh Ginger", price: "400/-", img: "https://images.pexels.com/photos/161559/ginger-root-spice-161559.jpeg?auto=compress&cs=tinysrgb&w=400", steps: ["Strong aroma.", "Organic."] },
+                { name: "Green Chili", price: "60/-", img: "https://images.pexels.com/photos/1393382/pexels-photo-1393382.jpeg?auto=compress&cs=tinysrgb&w=400", steps: ["Spicy & fresh.", "Farm direct."] },
+                { name: "Fresh Carrots", price: "90/-", img: "https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg?auto=compress&cs=tinysrgb&w=400", steps: ["Sweet & crunchy.", "Vitamin A rich."] },
+                { name: "Red Apples", price: "280/-", img: "https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg?auto=compress&cs=tinysrgb&w=400", steps: ["Sweet taste.", "Wax free."] },
+                { name: "Bananas", price: "120/-", img: "https://images.pexels.com/photos/2870882/pexels-photo-2870882.jpeg?auto=compress&cs=tinysrgb&w=400", steps: ["Naturally ripened."] },
+                { name: "Fresh Oranges", price: "200/-", img: "https://images.pexels.com/photos/691166/pexels-photo-691166.jpeg?auto=compress&cs=tinysrgb&w=400", steps: ["Citrus blast."] },
+                { name: "Pomegranate", price: "450/-", img: "https://images.pexels.com/photos/65255/pexels-photo-65255.jpeg?auto=compress&cs=tinysrgb&w=400", steps: ["Juicy seeds."] },
+                { name: "Green Grapes", price: "320/-", img: "https://images.pexels.com/photos/708777/pexels-photo-708777.jpeg?auto=compress&cs=tinysrgb&w=400", steps: ["Seedless & sweet."] },
+                { name: "Pineapple", price: "350/-", img: "https://images.pexels.com/photos/4412920/pexels-photo-4412920.jpeg?auto=compress&cs=tinysrgb&w=400", steps: ["Tropical fresh."] },
+                { name: "Sweet Mangoes", price: "400/-", img: "https://images.pexels.com/photos/2294471/pexels-photo-2294471.jpeg?auto=compress&cs=tinysrgb&w=400", steps: ["King of fruits."] },
+                { name: "Sunflower Oil", price: "550/-", img: "https://images.pexels.com/photos/4021908/pexels-photo-4021908.jpeg?auto=compress&cs=tinysrgb&w=400", steps: ["Heart healthy."] },
+                { name: "Turmeric Powder", price: "150/-", img: "https://images.pexels.com/photos/1340116/pexels-photo-1340116.jpeg?auto=compress&cs=tinysrgb&w=400", steps: ["Pure powder."] },
+                { name: "Desi Ghee", price: "1850/-", img: "https://images.pexels.com/photos/4452147/pexels-photo-4452147.jpeg?auto=compress&cs=tinysrgb&w=400", steps: ["Traditional."] },
+                { name: "Pure Honey", price: "1200/-", img: "https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg?auto=compress&cs=tinysrgb&w=400", steps: ["Forest honey."] },
+                { name: "Basmati Rice", price: "350/-", img: "https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg?auto=compress&cs=tinysrgb&w=400", steps: ["Long grain."] },
+                { name: "Brown Eggs", price: "240/-", img: "my image/egg.webp", steps: ["Farm fresh."] }
+                
+            ]
+        }
+    ];
+        const container = document.getElementById('gallery-container');
+        storeData.forEach(cat => {
+            const section = document.createElement('div');
+            section.innerHTML = `<div class="cat-heading">${cat.title}</div>`;
+            const grid = document.createElement('div');
+            grid.className = 'grocery-grid';
+            cat.items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.onclick = () => openModal(item);
+                card.innerHTML = `<img src="${item.img}"><h3>${item.name}</h3><div class="price">${item.price}</div>`;
+                grid.appendChild(card);
+            });
+            section.appendChild(grid);
+            container.appendChild(section);
+        });
+
+        function openModal(item) {
+            document.getElementById('m-name').innerText = item.name;
+            document.getElementById('m-price').innerText = item.price;
+            document.getElementById('m-img').src = item.img;
+            const stepsList = document.getElementById('m-steps');
+            stepsList.innerHTML = '';
+            item.steps.forEach(step => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fas fa-check-circle text-success me-2"></i> ${step}`;
+                stepsList.appendChild(li);
+            });
+            document.getElementById('itemModal').style.display = 'flex';
+        }
+
+        function closeModal() { document.getElementById('itemModal').style.display = 'none'; }
+    </script>
+
+<footer class="text-center text-lg-start pt-4">
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <div>
+      <a href="" class="me-4"><i class="fab fa-facebook-f"></i></a>
+      <a href="" class="me-4"><i class="fab fa-twitter"></i></a>
+      <a href="" class="me-4"><i class="fab fa-instagram"></i></a>
+      <a href="" class="me-4"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </section>
+
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4"><i class="fa-solid fa-star"></i> Star Organic Farm</h6>
+          <p>Premium quality farm products delivered directly to your home with 100% purity guarantee.</p>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Products</h6>
+          <p><a href="#!" class="text-reset">Spices</a></p>
+          <p><a href="#!" class="text-reset">Cereal</a></p>
+          <p><a href="#!" class="text-reset">Pulses</a></p>
+        </div>
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Karachi, Pakistan</p>
+          <p><i class="fas fa-envelope me-3"></i> info@groca.com</p>
+          <p><i class="fas fa-phone me-3"></i> +92 300 1234567</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="text-center p-4" style="background-color: rgba(255, 255, 255, 0.1);">
+    © 2026 Copyright: <a class="fw-bold" href="#">Groca.com</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
