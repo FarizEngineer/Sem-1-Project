@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products page</title>
+     <link rel="icon" href="imgs/Logo final.png">
+     <link rel="stylesheet" href="fariz.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Navbar start -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary"  style=" background-color:whitesmoke !important; height: auto; width: 100%; position: sticky !important;" >
+  <div class="container-fluid" >
+    <a class="navbar-brand" href="#"><img src="imgs/Logo final.png" style="height:100px; width:100px ;"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active " aria-current="page" href="fariz.html" style="color: chartreuse; font-family: Lucida Calligraphy;"><i class="fa-notdog-duo fa-solid fa-house"></i>Home</a>
+        </li>
+        <li class="nav-item ">
+          <a class=" nav-link active ms-2" aria-current="page" style="color: chartreuse; font-family: Lucida Calligraphy;"  href="Fariz2.html"><i class="fa-brands fa-product-hunt"></i>Products</a>
+        </li>
+        <li class="nav-item ">
+          <a class=" nav-link active ms-2" aria-current="page" style="color: chartreuse; font-family: Lucida Calligraphy;"  href="#"><i class="fa-jelly-fill fa-regular fa-image"></i>Gallery</a>
+        </li>
+        <li class="nav-item ">
+          <a class=" nav-link active ms-2" aria-current="page" style="color: chartreuse; font-family: Lucida Calligraphy;" href="#"><i class="fa-notdog-duo fa-solid fa-circle-question"></i>Query</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link ms-2" style="color: chartreuse; font-family: Lucida Calligraphy;"   href="#"><i class="fa-solid fa-phone"></i>Contact us</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link disabled ms-2"  style="color: chartreuse; font-family: Lucida Calligraphy;"  aria-disabled="true"><i class="fa-solid fa-circle-info"></i>About us</a>
+        </li>
+        <!-- Dropdown -->
+           <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle dropdownscroll ms-5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" style="font-family: Lucida Calligraphy;"><i class="fa-solid fa-square-caret-down me-2"></i>Catagories</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item"  style=" font-family: Lucida Calligraphy;"   href="#scrollspyHeading1">Cereals</a></li>
+        <li><a class="dropdown-item"  style=" font-family: Lucida Calligraphy;"  href="#scrollspyHeading2">Pulses</a></li>
+        <li><a class="dropdown-item" style=" font-family: Lucida Calligraphy;"  href="#scrollspyHeading3">Spices</a></li>
+        <li><a class="dropdown-item" style=" font-family: Lucida Calligraphy;"  href="#scrollspyHeading4">Oils</a></li>
+        <li><a class="dropdown-item" style=" font-family: Lucida Calligraphy;"  href="#scrollspyHeading5">Wheat</a></li>
+        <li><a class="dropdown-item" style=" font-family: Lucida Calligraphy;"  href="#scrollspyHeading6">Rice</a></li>
+      </ul>
+    </li>
+      </ul>
+    
+    </div>
+  </div>
+</nav>
+     <!-- Navbar end / Dropdown work / Card Work -->
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+  <h1 id="scrollspyHeading1" style="text-align: center; color: chartreuse; font-family: Lucida Calligraphy;">Cereals</h1>
+  <!-- Card work start -->
+  <div class="container-fluid mt-3 mb-4">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/p1 corn flakes (cereal).jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Corn flakes</h5>
+    <p class="card-text">Classic Crunch, Timeless Taste!
+Simple Breakfast Every Morning.</p>
+<p><strong>Price: Pkr.650/500g pack</strong></p>
+   <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal" >Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Muesli (cereals).jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Muesli</h5>
+    <p class="card-text">Nutty, Fruity Goodness!
+Natural Energy, Zero Guilt.</p>
+<p><strong>Price: Pkr.800/500g</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/choco flakes (cereals).jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Choco flakes</h5>
+    <p class="card-text">Choco Delight in Every Bite!
+Fun, Sweet Start Kids & Adults Love.</p>
+<p><strong>Price: Pkr.400/400g pack</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Rolled oats (cereals).avif" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Rolled Oats</h5>
+    <p class="card-text">Pure Power from Oats!
+Healthy, Hearty Fuel for Your Day.</p>
+<p><strong>Price: Pkr.400/500g</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+  <h1 id="scrollspyHeading2" style="text-align: center; color: chartreuse; font-family: Lucida Calligraphy;">Pulses</h1>
+   <div class="container-fluid mt-4 mb-4">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Maash daal (Pulses).jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Maash Daal</h5>
+    <p class="card-text">Rich & Creamy Classic!
+Hearty Daal for Bold Flavors.</p>
+<p><strong>Price: Pkr.400/kg</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/fp 3 (chick peas).jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Chick peas (Chana)</h5>
+    <p class="card-text">Protein-Packed Powerhouse!</p>
+    <p><strong>Price: Pkr.310/kg</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+  <small class="text-center mb-1">👌Best of our products</small>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Masoor daal (pulses).avif" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Masoor Daal</h5>
+    <p class="card-text">Quick-Cook Comfort!
+Soft, Nutritious Daal Delight.</p>
+<p><strong>Price: Pkr.300/kg</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Moong daal (Pulses).jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Moong Daal</h5>
+    <p class="card-text">Light & Healthy Glow!
+Gentle on Stomach, Big on Benefits.</p>
+<p><strong>Price: Pkr.340/kg</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+  <h1 id="scrollspyHeading3" style="text-align: center; color: chartreuse; font-family: Lucida Calligraphy;">Spices</h1>
+   <div class="container-fluid mt-4 mb-4">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/fp (chat masala).jpg " class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Chaat Masala</h5>
+    <p class="card-text">Tangy, Zesty Magic!
+Instant Flavor Burst for Snacks.</p>
+<p><strong>Price: Pkr.280/100g</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+<small class="text-center mb-1">👌Best of our products</small>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Turmeric ppdr.avif" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Turmeric(Hald) powder</h5>
+    <p class="card-text">Golden Goodness, Daily Essential!
+Health & Color in Every Curry.</p>
+<p><strong>Price: Pkr.200/100g</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+  <small class="text-center mb-1">👌Best of our products</small>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Garam masala (spices).jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Garam masala</h5>
+    <p class="card-text">Warm Aroma, Perfect Finish!
+The Heart of Pakistani Curries.
+Depth in Every Sprinkle.</p>
+<p><strong>Price: Pkr.340/100g</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/fp (lal mirch powder).jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Lal Mirch powder</h5>
+    <p class="card-text">Fiery Kick, Authentic Heat!
+Spice Up Every Pakistani Dish.</p>
+<p><strong>Price: Pkr.330/100g</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+  <small class="text-center mb-1">👌Best of our products</small>
+</div>
+      </div>
+    </div>
+  </div>
+  <h1 id="scrollspyHeading4" style="text-align: center; color: chartreuse; font-family: Lucida Calligraphy;">Oils</h1>
+   <div class="container-fluid mt-4 mb-4">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Sunflower oil.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Sunflower Oil</h5>
+    <p class="card-text">Light & Versatile Everyday Hero!
+Crunchy Fries to Smooth Curries.</p>
+<p><strong>Price: Pkr.650/liter</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Coconut Oil.avif" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Coconut Oil</h5>
+    <p class="card-text">Tropical Crunch, High-Heat Power!
+Flavorful & Stable for Bold Dishes.</p>
+<p><strong>Price: Pkr.1200/liter</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Mustard Oil.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Mustard Oil</h5>
+    <p class="card-text">Pungent Traditional Kick!
+Authentic Flavor in Every Tadka.</p>
+<p><strong>Price: Pkr.680/liter</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Olive Oil.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Olive Oil</h5>
+    <p class="card-text">Golden Health Glow!
+Premium Choice for Heart & Taste.</p>
+<p><strong>Price: Pkr.2500/liter</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+  <h1 id="scrollspyHeading5" style="text-align: center; color: chartreuse; font-family: Lucida Calligraphy;">Wheat</h1>
+   <div class="container-fluid mt-4 mb-4">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Whole wheat Atta.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Atta</h5>
+    <p class="card-text">Daily Roti King!
+Nutritious Whole Grain Power.</p>
+<p><strong>Price: Pkr.150/kg</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/SUJI.avif" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Suji</h5>
+    <p class="card-text">Crunchy & Quick Delight!
+Halwa to Breakfast Star.</p>
+<p><strong>Price: Pkr.160/kg</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Maida.avif" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Maida</h5>
+    <p class="card-text">Soft & Fluffy Favorite!
+Baking & Snacks Essential.</p>
+<p><strong>Price: Pkr.130/kg</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Dalia.webp" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Daliaa</h5>
+    <p class="card-text">Hearty & Healthy Comfort!
+Nutritious One-Pot Meals.</p>
+<p><strong>Price: Pkr.180/kg</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+  <h1 id="scrollspyHeading6" style="text-align: center; color: chartreuse; font-family: Lucida Calligraphy;">Rice</h1>
+   <div class="container-fluid mt-4 mb-4">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Sella rice.webp" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Sella rice</h5>
+    <p class="card-text">Nutrient-Packed Golden Power!
+Easier Cook, Better Health.</p>
+<p><strong>Price: Pkr.330/kg</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Basmati Rice.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Basmati Rice</h5>
+    <p class="card-text">Fragrant Legend!
+The True King of Pakistani Rice.</p>
+<p><strong>Price: Pkr.470/kg</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Super kernel rice.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Kernel Rice</h5>
+    <p class="card-text">Extra-Long Luxury Grain!
+Ultimate Fluff & Aroma.</p>
+<p><strong>Price: Pkr.520/kg</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+      <div class="col-md-3">
+        <div class="card card2 mt-4" >
+  <img src="imgs/Basmati ultra long.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Basmati Ultra-long rice</h5>
+    <p class="card-text">Ultra-Long Modern Star!
+Bold Length, Rich Flavor.</p>
+<p><strong>Price: Pkr.660/kg</strong></p>
+     <div class="container text-center"> <a href="#"  onclick="buybtn()" class="btn cardbtn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</a>    <a class="btn cardbtn2 ms-2" id="atcbtn" onclick="button()">Add to cart</a></div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+ <!-- Card work end -->
+</div>
+    <!-- Dropdown work / Card work -->
+
+      <!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span style="font-family: Lucida Calligraphy;">Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4" style="font-family: Lucida Calligraphy;">
+            <i class="fa-solid fa-star"></i>Star Organic Farm
+          </h6>
+          <p style="font-family: Lucida Calligraphy;">
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4" style="font-family: Lucida Calligraphy;">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Spices</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Cereal</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Pulses</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Oats</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4" style="font-family: Lucida Calligraphy;">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Products</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Gallery</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Contact us</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Query</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4" style="font-family: Lucida Calligraphy;">Contact</h6>
+          <p><i class="fas fa-home me-3"></i>Karachi, Pakistan</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            info@example.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+    
+   <script src="fariz.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+   
+      
+</body>
+</html>

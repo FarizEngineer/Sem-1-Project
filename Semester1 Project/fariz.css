@@ -1,0 +1,225 @@
+.navbar{
+    animation: navanim 2s ease-in-out;
+    position: sticky !important;   /* you already have this */
+    z-index: 1030;
+
+}
+@keyframes navanim{
+    from{
+        transform: translateY(-15px);
+        opacity: 0;
+    }
+    to{
+          transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+ .nav-link{
+    color: chartreuse  !important;
+    transition: transform 0.2s ease-in-out !important;
+    
+}
+.nav-link:hover{
+    transform: translateY(5px) ;
+    box-shadow: 0px 0px 10px gold;
+    color: springgreen !important;
+}
+.navbar{
+  position:sticky !important; 
+}
+.btn{
+  border: 1px solid  chartreuse !important;
+    color: chartreuse !important;
+    transition: transform 0.2s ease-in-out !important;
+}
+.btn:hover{
+   transform: translateY(5px) ;
+    box-shadow: 0px 0px 10px gold;
+    color: springgreen !important;
+    background-color: lightgoldenrodyellow;
+}
+.form-control{
+  border: 1px solid chartreuse !important;
+}
+.box{
+    border: 1px solid black;
+    padding: 20px;
+    padding-top: 25px;
+  padding-bottom: 20px;
+  padding-left:30px ;
+  padding-right: 30px;
+     transition: transform 0.4s ease-in-out;
+}
+.box:hover{
+transform: translateY(2px) scale(1.01 , 1.01);
+  box-shadow: 0px 0px 10px black;
+  border: 1px solid springgreen;
+
+}
+
+
+.mibtn{
+    border: 1px solid chartreuse;
+    background-color: white;
+    color: chartreuse;
+    width:130px ;
+    height:35px ;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out ;
+}
+
+.mibtn:hover{
+ transform: translateY(5px) ;
+    box-shadow: 0px 0px 10px gold;
+    color: springgreen !important;
+    border: 1px solid gold;
+
+}
+
+.cardbtn{
+     border: 1px solid chartreuse !important;
+     color: chartreuse !important;
+        background-color: white;
+       border-radius: 6px;
+       width: 60px;
+        transition: transform 0.3s ease-in-out ;
+}
+.cardbtn:hover{
+transform: translateX(5px) scale(1.02 , 1.02);
+color: white !important;
+    box-shadow: 0px 0px 10px gold;
+    background-color: springgreen !important;
+    border: 1px solid gold;
+
+}
+
+.nsbox{
+    border: 2px solid black;
+    text-align: center;
+    height: auto;
+    width: 400px;
+}
+
+.newsbox{
+    border: 1px solid black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    transition: transform 0.4s ease-in-out;
+}
+.newsbox:hover{
+    transform: translateY(5px) scale(1.01 , 1.01);
+  box-shadow: 0px 0px 10px black;
+  border: 1px solid springgreen;
+}
+
+.inpn{
+    width: auto;
+    height: 35px;
+    border: 1px solid chartreuse;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+}
+.inpn:hover{
+    transform: translateX(5px);
+    border: 2px solid gold;
+     box-shadow: 0px 0px 8px springgreen;
+
+}
+.newsinpbtn{
+width: 100px;
+ height: 35px;
+ background-color: white;
+ border: 1px solid chartreuse;
+ color: chartreuse;
+ border-radius: 8px;
+ transition: transform 0.2s ease-in-out;
+}
+
+.newsinpbtn:hover{
+ transform: translateX(-4px);
+      box-shadow: 0px 0px 10px gold;
+    color: springgreen ;
+    border: 1px solid gold;
+
+}
+.card{
+    border-radius: 20px !important;
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover{
+    transform: translateY(-4px)  scale( 1.05,1.05 );
+    box-shadow: 0px 0px 5px gold;
+}
+
+.dropdownscroll{
+    border: 1px solid chartreuse !important;
+    height: 36px;
+    width: 160px;
+}
+.dropdownscroll:hover{
+     transform: translateY(5px) ;
+      border: 1px solid gold !important;
+    box-shadow: 0px 0px 10px gold;
+    color: springgreen !important;
+}
+.cardbtn{
+    border: 1px solid chartreuse !important;
+    color: chartreuse !important;
+    width: auto;
+}
+.cardbtn2{
+    border: 1px solid chartreuse !important;
+    color: chartreuse !important;
+    transition: transform 0.4s ease-in-out;
+}
+.cardbtn2:hover{
+    transform: translateX(-5px) scale(1.02 , 1.02);
+    color: white !important;
+    box-shadow: 0px 0px 10px gold;
+    background-color: chartreuse !important;
+    border: 1px solid gold;
+}
+
+/* Card's image work  */
+.card-img-top{
+    height: 230px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+.card-img-top:hover{
+    transform:  scale(1.02 , 1.02);
+    box-shadow: 0px 0px 5px gray;
+}
+
+/* Offer box 1 */
+.offerbx{
+    border: 1px solid black;
+    border-radius: 8px;
+    height: auto;
+    width: auto;
+}
+/* offer button */
+#offbtn{
+    border: 1px solid black;
+    border-radius: 8px;
+    color: black;
+    background: linear-gradient( lightblue, pink , lightgoldenrodyellow);
+    transition: transform 0.3s ease-in-out;
+}
+#offbtn:hover{
+ box-shadow: 0px 0px 8px grey;
+ transform: scale(1.04 , 1.04);
+ color:darkred;
+}
+
+/* Featured cards image  */
+.fetimage{
+    transition: transform 0.4s ease-in-out;
+}
+.fetimage:hover{
+    transform: scale(1.02 , 1.02);
+    box-shadow: 2px 0px 5px grey;
+}
