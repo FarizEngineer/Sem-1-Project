@@ -9,11 +9,11 @@ function auth(){
   let inputnew=document.getElementById(`inpnews`).value
 // condition
 if(inputnew==""){
-errormess.innerHTML="Please enter your email first..."
+errormess.innerHTML="Please enter your email first...";
 }
 else{
   alert(`Thank you for signing in as ${inputnew}`)
-
+errormess.innerHTML="";
 }
 }
 
